@@ -1,0 +1,17 @@
+body {
+  margin: 5% 10%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 200%;
+}
+
+#leftcolmn {
+  margin: 0;
+  clear: left;
+}
+
+#rightcolmn {
+  clear: left;
+}
