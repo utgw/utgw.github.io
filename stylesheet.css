@@ -14,20 +14,7 @@ h1 a {
   font-family: serif;
 }
 
-.icon {
-  float: none;
+#icon {
   text-align: center;
 }
 
-#leftcolmn {
-  margin-right: 10%;
-  float: left;
-}
-
-#rightcolmn {
-  float: left;
-}
-
-hr {
-  clear: both;
-}
