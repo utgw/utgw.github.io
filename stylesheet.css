@@ -17,6 +17,10 @@ h1 a {
   font-family: serif;
 }
 
+h1 a:hover {
+  color: black;
+}
+
 #icon {
   text-align: center;
 }
