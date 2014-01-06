@@ -1,7 +1,7 @@
 body {
   margin: 5% 10%;
   font-family: 'Alegreya Sans', sans-serif;
-  background-color: #99f;
+  background-color: #def;
   color: black;
 }
 
@@ -13,10 +13,6 @@ h1 {
 a {
   color: blue;
   text-decoration: none;
-}
-
-h1 a {
-  color: black;
 }
 
 #icon {
@@ -42,9 +38,7 @@ ul#MainMenu {
   padding: 0;
 }
 
-ul#MainMenu li:first-letter {
-  font-size: 150%;
-}
+ul#MainMenu li:first-letter { font-size: 150%; }
 
 #allover {
   border: 1px solid black;
