@@ -1,7 +1,7 @@
 body {
   margin: 5% 10%;
   font-family: 'Alegreya Sans', sans-serif;
-  background-color: #f88;
+  background-color: #fdd;
   color: black;
 }
 
@@ -15,35 +15,43 @@ a {
   text-decoration: none;
 }
 
-#icon {
-  text-align: center;
-  float: left;
-  width: 25%;
-}
-
-#rightcolmn {
-  width: 75%;
-  float: right;
-}
-
 #footer {
   padding-top: 1em;
   width: 100%;
   clear: both;
-  padding-left: 3em;
 }
-
-ul#MainMenu {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul#MainMenu li:first-letter { font-size: 150%; }
 
 #allover {
+  clear: both;
   border: 1px solid black;
-  border-radius: 1em;
+  border-radius: 0 1em 1em 1em;
   background-color: white;
   padding: 0.5em;
   box-shadow: 10px 10px 10px rgba(0,0,0,0.7);
+  padding-left: 3em;
+}
+
+#tabmenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#tabmenu ul li {
+  float: left;
+  text-align: center;
+  font-size: 125%;
+  padding: 1em 1em;
+  width: 15%;
+  background-color: #eee;
+  border: black solid 1px;
+  border-radius: 1em 1em 0 0;
+}
+
+#tabmenu ul li#now {
+  background-color: white;
+}
+
+#tabmenu ul a li:hover {
+  background-color: silver;
 }
