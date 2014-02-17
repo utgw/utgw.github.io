@@ -26,9 +26,8 @@ a {
   border: 1px solid black;
   border-radius: 0 1em 1em 1em;
   background-color: white;
-  padding: 0.5em;
   box-shadow: 10px 10px 10px rgba(0,0,0,0.7);
-  padding-left: 3em;
+  padding: 0.5em 3em;
 }
 
 #tabmenu ul {
