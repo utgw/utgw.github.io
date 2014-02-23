@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>藤原竜也ったー</title>
+<script type="text/javascript">
+function tatsuya(){
+  var text = document.rumia.moji.value;
+  var bo = text.split('');
+  var res = "";
+  for(i in bo){
+    res += (((document.rumia.exc.checked) ? (bo[i].match(/!|！/) ? true : false) : false)
+    || ((document.rumia.que.checked) ? (bo[i].match(/\?|？/) ? true : false) : false)
+    || ((document.rumia.dot.checked) ? (bo[i].match(/・|‥|…/) ? true : false) : false)
+    || ((document.rumia.mko.checked) ? (bo[i].match(/\(|\)|（|）/) ? true : false) : false)
+    || ((document.rumia.kko.checked) ? (bo[i].match(/｢|｣|「|」/) ? true : false) : false)
+    || ((document.rumia.spc.checked) ? (bo[i].match(/\s|　|\t/) ? true : false) : false)
+    || ((document.rumia.alh.checked) ? (bo[i].match(/[a-zA-Zａ-ｚＡ-Ｚ]/) ? true : false) : false)
+    || ((document.rumia.num.checked) ? (bo[i].match(/[0-9０-９]/) ? true : false) : false)
+    ) ? bo[i] : bo[i]+"゛";
+  }
+  document.rumia.res.value = res;
+}
+
+function tweet(){
+  window.open('http://twitter.com/share?text='+encodeURI(document.rumia.res.value,null)); 
+}
+</script>
+</head>
+<body>
+<h1>藤原竜也ったー</h1>
+<form name="rumia">
+<input type="text" name="moji" size="100"><input onclick="tatsuya()" type="button" value="藤原竜也"><br><fieldset><legend>次の文字に゛を付けない</legend><input type="checkbox" name="exc">！ <input type="checkbox" name="que">？ <input type="checkbox" name="dot" checked="checked">・‥… <input type="checkbox" name="mko" checked="checked">（） <input type="checkbox" name="kko" checked="checked">「」 <input type="checkbox" name="spc" checked="checked">スペース <input type="checkbox" name="alh" checked="checked">アルファベット <input type="checkbox" name="num" checked="checked">アラビア数字</fieldset>↓<br>
+<textarea name="res" rows="6" cols="80">こ゛こ゛に゛結゛果゛が゛出゛ま゛す゛
+</textarea><input onclick="tweet()" type="button" value="Twitterでつぶやく"></form>
+<hr>
+<a href="../">Home</a>
+</body>
+</html>
