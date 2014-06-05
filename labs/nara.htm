@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Œû•ª“cE‘dÅE—fÅŒvZ‹@</title>
+<meta charset="utf-8">
+<title>å£åˆ†ç”°ãƒ»ç§Ÿç¨ãƒ»åº¸ç¨è¨ˆç®—æ©Ÿ</title>
 <script type="text/javascript">
 function hoge()
 {
@@ -14,18 +15,18 @@ function hoge()
   nm = Number(document.f.nm.value);
   nf = Number(document.f.nf.value);
   cho = tan = bu = soku = wa = jo = shaku = 0;
-  // Œû•ª“cE‘dÅE—fÅ–ÊÏ
+  // å£åˆ†ç”°ãƒ»ç§Ÿç¨ãƒ»åº¸ç¨é¢ç©
   bu = Math.floor((st + jt + cn) * sozei + rf * sozei * 2 / 3 + nm * sozei / 3 + nf * sozei * 2 / 9);
   bcp = bu;
   tan = Math.floor(bu / 360);
   bu %= 360;
   cho = Math.floor(tan / 10);
   tan %= 10;
-  // ‘dÅ
+  // ç§Ÿç¨
   wa = 22 * Math.floor(bcp / 360);
   soku = Math.floor(wa / 10);
   wa %= 10;
-  // —fÅ
+  // åº¸ç¨
   shaku = Math.floor((st + jt / 2) * 26);
   jo = Math.floor(shaku / 10);
   shaku %= 10;
@@ -40,24 +41,24 @@ function hoge()
 </script>
 </head>
 <body>
-<h1>Œû•ª“cE‘dÅE—fÅŒvZ‹@</h1>
+<h1>å£åˆ†ç”°ãƒ»ç§Ÿç¨ãƒ»åº¸ç¨è¨ˆç®—æ©Ÿ</h1>
 <form name="f" action="#">
 <table>
   <tr>
-    <td>³’š</td><td><input type="number" name="st" value="0">l</td>
-    <td>Ÿ’š</td><td><input type="number" name="jt" value="0">l</td>
-    <td>’†’j(‚È‚¢‚µ6ÎˆÈã20Î–¢–’jq)</td><td><input type="number" name="cn" value="0">l</td>
+    <td>æ­£ä¸</td><td><input type="number" name="st" value="0">äºº</td>
+    <td>æ¬¡ä¸</td><td><input type="number" name="jt" value="0">äºº</td>
+    <td>ä¸­ç”·(ãªã„ã—6æ­³ä»¥ä¸Š20æ­³æœªæº€ç”·å­)</td><td><input type="number" name="cn" value="0">äºº</td>
   </tr>
-  <tr><td>6ÎˆÈã‚Ì—q</td><td><input type="number" name="rf" value="0">l</td></tr>
-  <tr><td>@@V@@@“z</td><td><input type="number" name="nm" value="0">l</td></tr>
-  <tr><td>@@V@@@›X</td><td><input type="number" name="nf" value="0">l</td></tr>
+  <tr><td>6æ­³ä»¥ä¸Šã®å¥³å­</td><td><input type="number" name="rf" value="0">äºº</td></tr>
+  <tr><td>ã€€ã€€ã€ƒã€€ã€€ã€€å¥´</td><td><input type="number" name="nm" value="0">äºº</td></tr>
+  <tr><td>ã€€ã€€ã€ƒã€€ã€€ã€€å©¢</td><td><input type="number" name="nf" value="0">äºº</td></tr>
 </table>
-<input type="button" value="ŒvZ" onclick="hoge()">
+<input type="button" value="è¨ˆç®—" onclick="hoge()">
 <br>
 <table>
-  <tr><td>Œû•ª“c–ÊÏ</td><td><input type="text" name="cho">’¬<input type="text" name="tan">’i<input type="text" name="bu">•à</td></tr>
-  <tr><td>‘dÅ</td><td><input type="text" name="soku">‘©<input type="text" name="wa">”c</td></tr>
-  <tr><td>—fÅ</td><td><input type="text" name="jo">ä<input type="text" name="shaku">Ú</td></tr>
+  <tr><td>å£åˆ†ç”°é¢ç©</td><td><input type="text" name="cho">ç”º<input type="text" name="tan">æ®µ<input type="text" name="bu">æ­©</td></tr>
+  <tr><td>ç§Ÿç¨</td><td><input type="text" name="soku">æŸ<input type="text" name="wa">æŠŠ</td></tr>
+  <tr><td>åº¸ç¨</td><td><input type="text" name="jo">ä¸ˆ<input type="text" name="shaku">å°º</td></tr>
 </table>
 </form>
 </body>
