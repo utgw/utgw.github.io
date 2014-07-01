@@ -16,19 +16,19 @@ function hoge()
   nf = Number(document.f.nf.value);
   cho = tan = bu = soku = wa = jo = shaku = 0;
   // 口分田・租税・庸税面積
-  bu = Math.floor((st + jt + cn) * sozei + rf * sozei * 2 / 3 + nm * sozei / 3 + nf * sozei * 2 / 9);
+  bu = Math.floor((st + jt + cn) * sozei + rf * sozei * 2.0 / 3.0 + nm * sozei / 3.0 + nf * sozei * 2.0 / 9.0);
   bcp = bu;
-  tan = Math.floor(bu / 360);
+  tan = Math.floor(bu / 360.0);
   bu %= 360;
-  cho = Math.floor(tan / 10);
+  cho = Math.floor(tan / 10.0);
   tan %= 10;
   // 租税
-  wa = 22 * Math.floor(bcp / 360);
-  soku = Math.floor(wa / 10);
+  wa = 22 * Math.floor(bcp / 360.0);
+  soku = Math.floor(wa / 10.0);
   wa %= 10;
   // 庸税
-  shaku = Math.floor((st + jt / 2) * 26);
-  jo = Math.floor(shaku / 10);
+  shaku = Math.floor((st + jt / 2.0) * 26);
+  jo = Math.floor(shaku / 10.0);
   shaku %= 10;
   document.f.bu.value = bu;
   document.f.tan.value = tan;
