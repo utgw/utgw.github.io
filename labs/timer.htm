@@ -24,8 +24,8 @@ function cntdown()
     clearInterval(cd);
     window.alert("そこまで！");
     f.btn.value = "開始";
-    f.min.disabled = false;
-    f.sec.disabled = false;
+    f.min.disabled = f.sec.disabled = false;
+    f.rst.disabled = true;
     f.ti.value = "";
     status = 0;
     return;
