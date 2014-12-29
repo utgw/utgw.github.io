@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>タイマー</title>
+<style type="text/css">
+.btn
+{
+  padding: 1em;
+}
+</style>
+<script type="text/javascript"><!-- 
+var status = 0;
+var sec;
+var cd;
+
+function cntdown()
+{
+  var f = document.hoge;
+  sec--;
+  f.ti.value = rest(sec);
+  if (sec == 0)
+  {
+    clearInterval(cd);
+    window.alert("そこまで！");
+    f.btn.value = "開始";
+    f.min.disabled = false;
+    f.sec.disabled = false;
+    f.ti.value = "";
+    status = 0;
+  }
+}
+
+function timer() // ボタンを押したときの処理
+{
+  var f = document.hoge;
+  switch (status)
+  {
+    case 0: // 始まっていない
+      if (!(f.min.value) && !(f.sec.value))
+      {
+        window.alert("時間を入力してください");
+        return;
+      }
+      status = 1;
+      f.btn.value = "一時停止";
+      f.min.disabled = true;
+      f.sec.disabled = true;
+      sec = Number(f.min.value) * 60 + Number(f.sec.value);
+      f.ti.value = rest(sec);
+      cd = setInterval("cntdown()", 1000);
+      break;
+    case 1: // 始まっている
+      status = 2;
+      f.btn.value = "再開";
+      clearInterval(cd);
+      break;
+    case 2: // 一時停止している
+      status = 1;
+      f.btn.value = "一時停止";
+      cd = setInterval("cntdown()", 1000);
+      break;
+  }
+}
+
+function rest(i)
+{
+  return("残り "+Math.floor(i/60)+"分"+i%60+"秒");
+}
+
+// -->
+</script>
+</head>
+<body>
+<h2>タイマー</h2>
+<form name="hoge">
+<input type="number" name="min" size="3" style="padding: 0.2em; font-size: 120%;">分
+<input type="number" name="sec" size="2" style="padding: 0.2em; font-size: 120%;">秒
+<input type="button" name="btn" value="開始" onclick="timer()" class="btn">
+<p><input type="text" name="ti" size="20" style="font-size: 200%;"></p>
+</form>
+</body>
+</html>
