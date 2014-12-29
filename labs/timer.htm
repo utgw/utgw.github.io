@@ -19,7 +19,7 @@ function cntdown()
   var f = document.hoge;
   sec--;
   f.ti.value = rest(sec);
-  if (sec == 0)
+  if (sec <= 0)
   {
     clearInterval(cd);
     window.alert("そこまで！");
