@@ -74,8 +74,8 @@ function rest(i)
 <body>
 <h2>タイマー</h2>
 <form name="hoge">
-<input type="number" name="min" size="3" style="padding: 0.2em; font-size: 120%;">分
-<input type="number" name="sec" size="2" style="padding: 0.2em; font-size: 120%;">秒
+<input type="number" name="min" size="3" min="0" style="padding: 0.2em; font-size: 120%;">分
+<input type="number" name="sec" size="2" max="59" min="0" style="padding: 0.2em; font-size: 120%;">秒
 <input type="button" name="btn" value="開始" onclick="timer()" class="btn">
 <p><input type="text" name="ti" size="20" style="font-size: 200%;"></p>
 </form>
