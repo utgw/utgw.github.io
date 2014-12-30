@@ -9,6 +9,12 @@
   padding: 0.5em;
   font-size: 125%;
 }
+
+.box
+{
+  padding: 0.2em;
+  font-size: 120%;
+}
 </style>
 <script type="text/javascript"><!-- 
 var status = 0;
@@ -17,66 +23,74 @@ var cd;
 
 function cntdown()
 {
-  var f = document.hoge;
+  var f = document.forms["hoge"];
   sec--;
   if (sec < 0)
   {
     clearInterval(cd);
     window.alert("そこまで！");
-    f.btn.value = "開始";
-    f.min.disabled = f.sec.disabled = false;
-    f.rst.disabled = true;
-    f.ti.value = "";
+    f["btn"].value = "開始";
+    f["min"].disabled = f["sec"].disabled = false;
+    f["rst"].disabled = true;
+    f["ti"].value = "";
     status = 0;
     return;
   }
-  f.ti.value = rest(sec);
+  if (sec % 10 == 0) f["ti"].value = rest(sec);
 }
 
 function timer() // ボタンを押したときの処理
 {
-  var f = document.hoge;
-  switch (status)
+  var f = document.forms["hoge"];
+  //switch (status)
+  switch (String(status))
   {
-    case 0: // 始まっていない
-      if (!(f.min.value) && !(f.sec.value))
+    case "0": // 始まっていない
+      if ((f["min"].value == 0) && (f["sec"].value == 0))
       {
         window.alert("時間を入力してください");
         return;
       }
       status = 1;
-      f.btn.value = "一時停止";
-      f.min.disabled = f.sec.disabled = true;
-      f.rst.disabled = false;
-      sec = Number(f.min.value) * 60 + Number(f.sec.value);
-      f.ti.value = rest(sec);
-      cd = setInterval("cntdown()", 1000);
+      f["btn"].value = "一時停止";
+      f["min"].disabled = f["sec"].disabled = true;
+      f["rst"].disabled = false;
+      sec = (Number(f["min"].value) * 60 + Number(f["sec"].value))*10;
+      f["ti"].value = rest(sec);
+      cd = start_cd();
       break;
-    case 1: // 始まっている
+    case "1": // 始まっている
       status = 2;
-      f.btn.value = "再開";
+      f["btn"].value = "再開";
       clearInterval(cd);
       break;
-    case 2: // 一時停止している
+    case "2": // 一時停止している
       status = 1;
-      f.btn.value = "一時停止";
-      cd = setInterval("cntdown()", 1000);
+      f["btn"].value = "一時停止";
+      cd = start_cd();
       break;
   }
 }
 
 function rest(i)
 {
-  return("残り "+Math.floor(i/60)+"分"+i%60+"秒");
+  i /= 10;
+  str = "残り "+Math.floor(i/60)+"分"+i%60+"秒";
+  return(str);
+}
+
+function start_cd()
+{
+  return setInterval(cntdown, 100);
 }
 
 function clr()
 {
-  var f = document.hoge;
-  f.rst.disabled = true;
-  f.min.disabled = f.sec.disabled = false;
-  f.btn.value = "開始";
-  f.ti.value = "";
+  var f = document.forms["hoge"];
+  f["rst"].disabled = true;
+  f["min"].disabled = f.sec.disabled = false;
+  f["btn"].value = "開始";
+  f["ti"].value = "";
   clearInterval(cd);
   status = 0;
 }
@@ -87,8 +101,8 @@ function clr()
 <body>
 <h1>タイマー</h1>
 <form name="hoge">
-<input type="number" name="min" value="0" size="3" min="0" style="padding: 0.2em; font-size: 120%;">分
-<input type="number" name="sec" value="0" size="2" min="0" max="60" style="padding: 0.2em; font-size: 120%;">秒
+<input type="number" name="min" value="0" size="2" min="0" class="box">分
+<input type="number" name="sec" value="0" size="2" min="0" max="59" class="box">秒
 <input type="button" name="btn" value="開始" onclick="timer()" class="btn">
 <input type="button" name="rst" value="リセット" onclick="clr()" class="btn" disabled>
 <p><input type="text" name="ti" value="" size="20" style="font-size: 200%;"></p>
