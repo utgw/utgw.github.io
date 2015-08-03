@@ -37,16 +37,20 @@
           var vowel,tone;
           var text = s[i];
           tone = text.substring(text.length-1,text.length);
-          text = text.substring(0,text.length-1);
-          if(text.match(/a/)) vowel = "a";
-          else if(text.match(/o/)) vowel = "o";
-          else if(text.match(/e/)) vowel = "e";
-          else if(text.match(/iu/)) vowel = "u";
-          else if(text.match(/ui/)) vowel = "i";
-          else if(text.match(/i/)) vowel = "i";
-          else if(text.match(/u/)) vowel = "u";
-          else vowel = "ü";
-          result.innerHTML += text.replace(vowel,cnv[vowel+tone])+" ";
+          if(text.match(/[A-Za-z][1-4]/)){
+            text = text.substring(0,text.length-1);
+            if(text.match(/a/)) vowel = "a";
+            else if(text.match(/o/)) vowel = "o";
+            else if(text.match(/e/)) vowel = "e";
+            else if(text.match(/iu/)) vowel = "u";
+            else if(text.match(/ui/)) vowel = "i";
+            else if(text.match(/i/)) vowel = "i";
+            else if(text.match(/u/)) vowel = "u";
+            else vowel = "ü";
+            result.innerHTML += text.replace(vowel,cnv[vowel+tone])+" ";
+          }else{
+            result.innerHTML += text+" ";
+          }
         }
         result.innerHTML = result.innerHTML.substring(0,result.innerHTML.length-1);
       }
