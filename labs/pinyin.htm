@@ -42,10 +42,8 @@
             if(text.match(/a/)) vowel = "a";
             else if(text.match(/o/)) vowel = "o";
             else if(text.match(/e/)) vowel = "e";
-            else if(text.match(/iu/)) vowel = "u";
-            else if(text.match(/ui/)) vowel = "i";
-            else if(text.match(/i/)) vowel = "i";
-            else if(text.match(/u/)) vowel = "u";
+            else if(text.match(/i?u/)) vowel = "u";
+            else if(text.match(/u?i/)) vowel = "i";
             else vowel = "ü";
             result.innerHTML += text.replace(vowel,cnv[vowel+tone])+" ";
           }else{
