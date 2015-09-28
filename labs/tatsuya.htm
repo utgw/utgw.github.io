@@ -10,6 +10,7 @@ function tatsuya(){
   var res = "";
   for(i in bo){
     res += (((document.rumia.exc.checked) ? (bo[i].match(/!|！/) ? true : false) : false)
+    || ((document.rumia.lon.checked) ? (bo[i].match(/\-|ー|〜|~/) ? true : false) : false)
     || ((document.rumia.que.checked) ? (bo[i].match(/\?|？/) ? true : false) : false)
     || ((document.rumia.dot.checked) ? (bo[i].match(/・|‥|…/) ? true : false) : false)
     || ((document.rumia.mko.checked) ? (bo[i].match(/\(|\)|（|）/) ? true : false) : false)
@@ -34,6 +35,7 @@ function tweet(){
 <fieldset><legend>次の文字に゛を付けない</legend>
 <input type="checkbox" name="exc">！
 <input type="checkbox" name="que">？
+<input type="checkbox" name="lon" checked="checked">長音(-ー〜~)
 <input type="checkbox" name="dot" checked="checked">・‥…
 <input type="checkbox" name="mko" checked="checked">（）
 <input type="checkbox" name="kko" checked="checked">「」
