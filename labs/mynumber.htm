@@ -7,9 +7,9 @@
       function outputMessage(valid){
         var result = document.getElementById('result');
         if(valid)
-          result.innerText = "あなたのマイナンバーは正しいです！";
+          result.textContent = "あなたのマイナンバーは正しいです！";
         else
-          result.innerText = "あなたのマイナンバーは不正です……";
+          result.textContent = "あなたのマイナンバーは不正です……";
       }
       
       function checkNumber(numberStr){
