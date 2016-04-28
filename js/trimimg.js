@@ -75,5 +75,13 @@ window.addEventListener('DOMContentLoaded', function () {
       });
       reader.readAsDataURL(file);
     });
+    document.getElementById('openUrl').addEventListener('click', function (evt) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", document.getElementById('url').value, true);
+      xhr.send();
+      xhr.addEventListener('load', function (evt) {
+        console.log(xhr);
+      });
+    });
   }
 });
