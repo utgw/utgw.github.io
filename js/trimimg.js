@@ -26,8 +26,9 @@ function dragEnd (evt) {
   var ex = evt.offsetX;
   var ey = evt.offsetY;
   canvas.removeEventListener('mousemove', drag);
-  canvas.removeEventListener('mousedown', dragStart);
-  canvas.removeEventListener('mouseup', dragEnd);
+  if (sx == ex && sy == ey) return true;
+  // canvas.removeEventListener('mousedown', dragStart);
+  // canvas.removeEventListener('mouseup', dragEnd);
   var width, height;
   if (sx > ex) {
     width = sx - ex;
@@ -51,6 +52,13 @@ function dragEnd (evt) {
   canvas.width = width;
   canvas.height = height;
   ctx.drawImage(image, sx, sy, width, height, 0, 0, width, height);
+  document.getElementById('canvas_image').src = canvas.toDataURL();
+  canvas.width = image.width;
+  canvas.height = image.height;
+  ctx.drawImage(image, 0, 0);
+  // canvas.classList.remove('trimable');
+  ctx.strokeStyle = '#FF0000';
+  ctx.strokeRect(sx, sy, width, height);
 }
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -67,6 +75,7 @@ window.addEventListener('DOMContentLoaded', function () {
         image = new Image();
         image.src = evt.target.result;
         image.addEventListener('load', function () {
+          canvas.classList.add('trimable');
           canvas.width = image.width;
           canvas.height = image.height;
           ctx.drawImage(image, 0, 0);
@@ -75,13 +84,13 @@ window.addEventListener('DOMContentLoaded', function () {
       });
       reader.readAsDataURL(file);
     });
-    document.getElementById('openUrl').addEventListener('click', function (evt) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", document.getElementById('url').value, true);
-      xhr.send();
-      xhr.addEventListener('load', function (evt) {
-        console.log(xhr);
-      });
-    });
+    // document.getElementById('openUrl').addEventListener('click', function (evt) {
+    //   var xhr = new XMLHttpRequest();
+    //   xhr.open("GET", document.getElementById('url').value, true);
+    //   xhr.send(null);
+    //   xhr.addEventListener('load', function (evt) {
+    //     console.log(xhr);
+    //   });
+    // });
   }
 });

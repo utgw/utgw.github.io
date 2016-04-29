@@ -1,3 +1,7 @@
 #image {
   border: 5px solid green;
 }
+
+.trimable {
+  cursor: crosshair;
+}
